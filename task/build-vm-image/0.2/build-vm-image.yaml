@@ -410,7 +410,7 @@ spec:
         if [ -f "/output/qcow2/disk.qcow2" ]; then
           echo -e "Found qcow2 image."
           # don't zip qcow2 images, it is already compressed.
-          buildah manifest add --arch $(arch) --os linux --artifact --artifact-type application/vnd.diskimage.qcow2.gzip $OUTPUT_IMAGE /output/qcow2/disk.qcow2
+          buildah manifest add --arch $(arch) --os linux --artifact --artifact-type application/vnd.diskimage.qcow2 $OUTPUT_IMAGE /output/qcow2/disk.qcow2
         elif [ -f "/output/image/disk.raw" ]; then
           echo -e "Found raw image."
           pigz /output/image/disk.raw

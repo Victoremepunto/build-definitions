@@ -18,6 +18,7 @@ If that's not something you ever plan to do, consider removing this section.
 - Expanded `IMAGE_TYPE` validation to support all bootc-image-builder types: `ami`, `anaconda-iso`, `bootc-installer`, `gce`, `iso`, `ova`, `pxe-tar-xz`, `qcow2`, `raw`, `vhd`, `vmdk`. The `ami` type was rejected despite being a valid bootc-image-builder output type, breaking AWS disk image builds.
 - Added push-script handling for `vmdk`, `ova`, and `pxe-tar-xz` output artifacts.
 - Added explicit failure when no output artifact is found, instead of silently pushing an empty manifest.
+- Fixed incorrect `application/vnd.diskimage.qcow2.gzip` artifact type for qcow2 images which are not gzip-compressed. Changed to `application/vnd.diskimage.qcow2`. **Note:** consumers matching on the old artifact type will need to update.
 
 ## 0.2.1
 
